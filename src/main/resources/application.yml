@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: loan-underwriting-ai
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Expose only what you need. "*" is a security finding in any enterprise review.
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+
+# Day 5: profile files (application-local.yml for Ollama, application-openai.yml
+# for OpenAI) get added here. Not today.

@@ -1,0 +1,6 @@
+# Keep shell scripts Unix-style even on Windows, or they break with "\r: command not found".
+* text=auto
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.jar binary
