@@ -1,8 +1,10 @@
 package com.nitish.underwriting.api;
 
 import java.time.Instant;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PingController {
 
     private final String applicationName;
+    private final Environment environment;
 
     // Constructor injection: no @Autowired fields anywhere in this project.
-    public PingController(@Value("${spring.application.name}") String applicationName) {
+    public PingController(@Value("${spring.application.name}") String applicationName, Environment environment) {
         this.applicationName = applicationName;
+        this.environment = environment;
     }
 
     @GetMapping("/ping")
@@ -28,7 +32,8 @@ public class PingController {
                 "UP",
                 applicationName,
                 Runtime.version().toString(),
-                Instant.now()
+                Instant.now(),
+                Arrays.asList(environment.getActiveProfiles())
         );
     }
 }

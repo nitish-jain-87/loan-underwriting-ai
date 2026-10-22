@@ -3,6 +3,7 @@ package com.nitish.underwriting.api;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.mock.env.MockEnvironment;
 
 /**
  * Plain unit test, no Spring context. Fast.
@@ -12,7 +13,9 @@ class PingControllerTest {
 
     @Test
     void pingReportsUp() {
-        PingController controller = new PingController("loan-underwriting-ai");
+        MockEnvironment environment = new MockEnvironment();
+        environment.setActiveProfiles("test");
+        PingController controller = new PingController("loan-underwriting-ai", environment);
 
         PingResponse response = controller.ping();
 
@@ -20,5 +23,6 @@ class PingControllerTest {
         assertThat(response.application()).isEqualTo("loan-underwriting-ai");
         assertThat(response.javaVersion()).startsWith("21");
         assertThat(response.timestamp()).isNotNull();
+        assertThat(response.activeProfiles()).containsExactly("test");
     }
 }
