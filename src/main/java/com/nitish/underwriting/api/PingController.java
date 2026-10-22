@@ -2,6 +2,7 @@ package com.nitish.underwriting.api;
 
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
@@ -33,7 +34,7 @@ public class PingController {
                 applicationName,
                 Runtime.version().toString(),
                 Instant.now(),
-                Arrays.asList(environment.getActiveProfiles())
+                List.of(environment.getActiveProfiles())
         );
     }
 }
