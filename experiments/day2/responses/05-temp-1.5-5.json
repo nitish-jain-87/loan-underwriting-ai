@@ -1,0 +1,17 @@
+{
+  "model": "qwen3:8b",
+  "created_at": "2026-10-26T19:35:28.7853153Z",
+  "message": {
+    "role": "assistant",
+    "content": "LoanFlow"
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 500559400,
+  "load_duration": 14830000,
+  "prompt_eval_count": 33,
+  "prompt_eval_cached_count": 32,
+  "prompt_eval_duration": 184634000,
+  "eval_count": 3,
+  "eval_duration": 293440000
+}

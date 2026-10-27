@@ -1,14 +1,13 @@
 package com.nitish.underwriting.api;
 
-import java.time.Instant;
-import java.util.Arrays;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.time.Instant;
+import java.util.List;
 
 /**
  * Smoke-test endpoint. Proves the app boots and serves HTTP.

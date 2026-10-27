@@ -1,0 +1,8 @@
+{
+  "model": "qwen3:8b",
+  "stream": false,
+  "think": false,
+  "messages": [
+    {"role": "user", "content": "In one sentence, what is a debt-to-income ratio?"}
+  ]
+}

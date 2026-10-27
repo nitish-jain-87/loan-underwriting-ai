@@ -1,0 +1,7 @@
+{
+  "model": "qwen3:8b", "stream": false, "think": false,
+  "messages": [
+    {"role": "user", "content": "Suggest a name for a loan underwriting app. Reply with the name only."}
+  ],
+  "options": {"temperature": 0}
+}

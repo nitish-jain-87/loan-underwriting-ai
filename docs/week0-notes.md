@@ -6,7 +6,7 @@ Write in your own words. If you can't explain it here, you can't explain it in a
 
 | Tool | Version installed | Where from |
 |---|---|---|
-| JDK | 21 | Adoptium.net |
+| JDK | 21.0.12.1 | Adoptium.net |
 | IntelliJ IDEA | 2026.2.3 | Jetbrains.com |
 | Docker | 4.96.2 | Docker.com |
 | Ollama | 0.40.8 | Ollama.com |

@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Response for GET /api/ping.
  *
- **/
+ */
 public record PingResponse(
         String status,
         String application,

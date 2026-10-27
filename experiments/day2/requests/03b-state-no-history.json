@@ -1,0 +1,8 @@
+{
+  "model": "qwen3:8b",
+  "stream": false,
+  "think": false,
+  "messages": [
+    {"role": "user", "content": "What loan amount did I ask for?"}
+  ]
+}

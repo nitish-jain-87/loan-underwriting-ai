@@ -1,0 +1,8 @@
+{
+  "model": "qwen3:8b",
+  "stream": false,
+  "think": false,
+  "messages": [
+    {"role":"assistant","content":"Thank you, Ravi Test. Your application for a $25,000 loan has been acknowledged. We look forward to reviewing your full application."}
+  ]
+}
