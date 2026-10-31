@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Day 2 verification (v3: notes check removed; token parsing tolerates pretty-printed JSON). Copy to scripts/verify-day2.sh, commit it with your work,
+# Day 2 verification (v4: also checks that experiments 03c and 06 test what they claim). Copy to scripts/verify-day2.sh, commit it with your work,
 # push, then run from the repo root in Git Bash:  bash scripts/verify-day2.sh
 set -u
 PASS=0; FAIL=0
@@ -42,6 +42,14 @@ check "06a request has num_ctx 256"   "grep -qE '\"num_ctx\": *256' $Q/06a-ctx-2
 A=$(num prompt_eval_count $R/06a-ctx-256.json); B=$(num prompt_eval_count $R/06b-ctx-4096.json)
 check "06a: prompt truncated (${A:-?} <= 256) or rejected" '[ -f $R/06a-ctx-256.json ] && { grep -q "\"error\"" $R/06a-ctx-256.json || { [ -n "$A" ] && [ "$A" -le 256 ]; }; }'
 check "06b: full prompt counted (${B:-?} > 256)" '[ -n "$B" ] && [ "$B" -gt 256 ]'
+
+echo "== Experiment content =="
+check "03c sends history (>=3 messages)"         "[ \$(grep -o '\"role\"' $Q/03c-state-with-history.json | wc -l) -ge 3 ]"
+check "03c: assistant reply, then follow-up"     "tr -d '\\r\\n' < $Q/03c-state-with-history.json | grep -qiE 'assistant.*user[^{]*what loan amount'"
+check "03c answer recalls 25000"                 "grep -qE '25,?000' $R/03c-state-with-history.json"
+check "06a/06b prompts identical"                "diff <(tr -d '\\r\\n' < $Q/06a-ctx-256.json | grep -oE '\"content\"[[:space:]]*:[[:space:]]*\"[^\"]*\"') <(tr -d '\\r\\n' < $Q/06b-ctx-4096.json | grep -oE '\"content\"[[:space:]]*:[[:space:]]*\"[^\"]*\"')"
+check "06 prompt ends with the question"         "grep -qiE 'reference code\\?' $Q/06b-ctx-4096.json"
+check "06b (full context) answers BLUE-42"       "grep -q 'BLUE-42' $R/06b-ctx-4096.json"
 
 echo "== OpenAI experiments =="
 for f in 07-openai-basic 08-openai-injection; do

@@ -1,8 +1,8 @@
 {
-  "model": "qwen3:8b",
-  "stream": false,
-  "think": false,
+  "model": "qwen3:8b", "stream": false, "think": false,
   "messages": [
-    {"role": "user", "content": "My name is Ravi Test and I am applying for a 25000 dollar loan. Acknowledge briefly."}
+    {"role": "user", "content": "My name is Ravi Test and I am applying for a 25000 dollar loan. Acknowledge briefly."},
+    {"role": "assistant", "content": "Thank you for your application. We acknowledge your request for a $25,000 loan. Please provide additional details as needed."},
+    {"role": "user", "content": "What loan amount did I ask for?"}
   ]
 }
