@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Ravi Test","requestedAmount":1000000,"purpose":"laptop","termMonths":12},"error":null,"rawOutput":null,"model":"qwen3:4b-instruct","promptTokens":356,"completionTokens":31,"latencyMs":4595}

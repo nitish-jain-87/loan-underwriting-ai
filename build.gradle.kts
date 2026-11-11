@@ -2,9 +2,7 @@
 // loan-underwriting-ai — build file
 //
 // Day 1 scope: a plain Spring Boot 4 web app that compiles, tests and boots.
-// NO LangChain4j yet. You add AI dependencies on Day 5, when you understand
-// what they do. Adding dependencies you can't explain is how beginners end up
-// with projects they can't debug.
+// Added Spring AI Dependencies
 // =============================================================================
 
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
@@ -39,6 +37,10 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webmvc")   // Boot 4 name for "starter-web"
     implementation("org.springframework.boot:spring-boot-starter-actuator")
     implementation("org.springframework.boot:spring-boot-starter-validation")
+    // Spring AI 2.0.x supports Spring Boot 4.0/4.1. The BOM pins all Spring AI module versions.
+    implementation(platform("org.springframework.ai:spring-ai-bom:2.0.2"))
+    implementation("org.springframework.ai:spring-ai-starter-model-ollama")
+    implementation("org.springframework.ai:spring-ai-starter-model-openai")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Priya Test","requestedAmount":12500,"purpose":"pay off my credit cards","termMonths":36},"error":null,"rawOutput":null,"model":"qwen3:8b","promptTokens":356,"completionTokens":45,"latencyMs":37487}

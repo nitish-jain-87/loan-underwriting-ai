@@ -1,0 +1,13 @@
+# gitleaks config: all default rules, plus one rule for every current OpenAI key format.
+[extend]
+useDefault = true
+
+[[rules]]
+id = "openai-api-key-any-format"
+description = "OpenAI API key (sk-, sk-proj-, sk-svcacct-, sk-admin-)"
+regex = '''sk-(?:proj-|svcacct-|admin-)?[A-Za-z0-9_-]{20,}'''
+keywords = ["sk-"]
+
+# .env.example is committed on purpose and holds placeholders only.
+[allowlist]
+paths = ['''\.env\.example$''']

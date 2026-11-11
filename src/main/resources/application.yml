@@ -1,6 +1,17 @@
 spring:
   application:
     name: loan-underwriting-ai
+  ai:
+    model:
+      # No AI provider is enabled unless a provider profile (local | openai) turns one on.
+      # AiConfig refuses to start the app if exactly one isn't active.
+      chat: none
+      embedding: none
+      image: none
+      moderation: none
+      audio:
+        speech: none
+        transcription: none
 
 server:
   port: 8080
@@ -14,6 +25,3 @@ management:
   endpoint:
     health:
       show-details: never
-
-# Day 5: profile files (application-local.yml for Ollama, application-openai.yml
-# for OpenAI) get added here. Not today.

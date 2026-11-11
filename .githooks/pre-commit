@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Pre-commit secret scan. Blocks the commit if staged changes contain a secret.
+# Enabled per clone with:  git config core.hooksPath .githooks
+# Uses gitleaks if installed (recommended); otherwise falls back to a basic grep.
+# This is a local safety net, not enforcement: `git commit --no-verify` skips it.
+# Enforcement = GitHub push protection + the CI scan (A2).
+set -u
+
+if command -v gitleaks >/dev/null 2>&1; then
+  # --staged: scan only what is about to be committed. --redact: never print the secret itself.
+  if ! gitleaks git --pre-commit --staged --redact --no-banner -v; then
+    echo
+    echo "COMMIT BLOCKED: gitleaks found a possible secret in your staged changes (see above)."
+    echo "Remove it (unstage with: git restore --staged <file>), then commit again."
+    echo "If it was a REAL key: rotate it now, even though it was never pushed."
+    exit 1
+  fi
+  exit 0
+fi
+
+echo "WARNING: gitleaks not installed, using the basic fallback check. Install gitleaks for full coverage."
+# Basic patterns: OpenAI keys, AWS access key IDs, private key blocks, GitHub tokens.
+PATTERN='sk-(proj-|svcacct-|admin-)?[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{36,}'
+hits=$(git diff --cached -U0 --no-color | grep -E '^\+' | grep -v '^+++' | grep -nE "$PATTERN" | sed -E 's/(sk-|AKIA|gh[pousr]_)[A-Za-z0-9_-]{4}[A-Za-z0-9_-]*/\1****REDACTED/g')
+if [ -n "$hits" ]; then
+  echo "COMMIT BLOCKED: possible secret in staged changes:"
+  echo "$hits"
+  echo "Remove it (git restore --staged <file>), then commit again. If it was a real key, rotate it now."
+  exit 1
+fi
+# Block staging .env files directly, even if .gitignore was bypassed with git add -f.
+bad_env=$(git diff --cached --name-only | grep -E '(^|/)\.env(\.|$)' | grep -v '\.env\.example$')
+if [ -n "$bad_env" ]; then
+  echo "COMMIT BLOCKED: .env file staged: $bad_env"
+  exit 1
+fi
+exit 0

@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Marcus Sample","requestedAmount":8000,"purpose":"used car","termMonths":24},"error":null,"rawOutput":null,"model":"gpt-5.4-mini-2026-03-17","promptTokens":328,"completionTokens":27,"latencyMs":835}

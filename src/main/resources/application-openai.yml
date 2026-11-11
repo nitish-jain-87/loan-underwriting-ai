@@ -1,0 +1,10 @@
+# Profile "openai": applicant text is sent to OpenAI. Fake data only until PII masking (Week 1).
+spring:
+  ai:
+    model:
+      chat: openai
+    openai:
+      api-key: ${OPENAI_API_KEY}   # from the environment, never a literal
+      chat:
+        model: gpt-5.4-mini
+        # No temperature: GPT-5-family reasoning models reject it.

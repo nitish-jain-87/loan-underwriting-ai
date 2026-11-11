@@ -1,0 +1,12 @@
+label=qwen3-4b
+model=qwen3:4b-instruct
+runs=20
+correct=16
+wrong_values=4
+invalid_output=0
+http_errors=0
+avg_latency_ms=4300
+max_latency_ms=5666
+avg_prompt_tokens=341
+avg_completion_tokens=34
+failed_inputs=5

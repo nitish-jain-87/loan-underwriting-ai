@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Ravi Test","requestedAmount":2500,"purpose":"laptop","termMonths":12},"error":null,"rawOutput":null,"model":"gpt-5.4-mini-2026-03-17","promptTokens":344,"completionTokens":28,"latencyMs":1086}

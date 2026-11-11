@@ -1,0 +1,12 @@
+label=openai
+model=gpt-5.4-mini-2026-03-17
+runs=20
+correct=20
+wrong_values=0
+invalid_output=0
+http_errors=0
+avg_latency_ms=1179
+max_latency_ms=4162
+avg_prompt_tokens=332
+avg_completion_tokens=28
+failed_inputs=none

@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Marcus Sample","requestedAmount":8000,"purpose":"used car","termMonths":24},"error":null,"rawOutput":null,"model":"qwen3:8b","promptTokens":346,"completionTokens":40,"latencyMs":9783}

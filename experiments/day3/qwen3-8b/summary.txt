@@ -1,0 +1,12 @@
+label=qwen3-8b
+model=qwen3:8b
+runs=20
+correct=16
+wrong_values=4
+invalid_output=0
+http_errors=0
+avg_latency_ms=11456
+max_latency_ms=37487
+avg_prompt_tokens=349
+avg_completion_tokens=40
+failed_inputs=5

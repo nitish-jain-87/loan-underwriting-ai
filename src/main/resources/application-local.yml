@@ -1,0 +1,12 @@
+# Profile "local": Ollama on this machine. Applicant text never leaves the laptop.
+spring:
+  ai:
+    model:
+      chat: ollama
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        model: qwen3:4b-instruct      # CPU-only machine: 4b for the dev loop, 8b for comparisons
+        temperature: 0.0     # extraction wants repeatability, not creativity
+        think: false         # qwen3 thinks by default: 5-10x the tokens and latency
+        num-ctx: 4096        # Spring AI's default is 2048. Never rely on it (Day 2: silent truncation)                 # TEMPORARY: local only, never in openai/prod

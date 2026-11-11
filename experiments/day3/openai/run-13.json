@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Ana Demo","requestedAmount":40000,"purpose":"kitchen remodel","termMonths":60},"error":null,"rawOutput":null,"model":"gpt-5.4-mini-2026-03-17","promptTokens":324,"completionTokens":28,"latencyMs":1156}

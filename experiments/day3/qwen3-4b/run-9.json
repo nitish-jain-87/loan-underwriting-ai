@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Li Example","requestedAmount":15000,"purpose":"medical bills","termMonths":18},"error":null,"rawOutput":null,"model":"qwen3:4b-instruct","promptTokens":335,"completionTokens":41,"latencyMs":4800}

@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Ana Demo","requestedAmount":40000,"purpose":"kitchen remodel","termMonths":60},"error":null,"rawOutput":null,"model":"qwen3:4b-instruct","promptTokens":332,"completionTokens":29,"latencyMs":3604}

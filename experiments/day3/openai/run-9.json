@@ -1,0 +1,1 @@
+{"ok":true,"result":{"applicantName":"Li Example","requestedAmount":15000,"purpose":"medical bills","termMonths":18},"error":null,"rawOutput":null,"model":"gpt-5.4-mini-2026-03-17","promptTokens":325,"completionTokens":27,"latencyMs":919}
