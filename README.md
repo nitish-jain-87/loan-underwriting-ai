@@ -25,3 +25,6 @@ curl localhost:8080/api/ping
 ## Docs
 - `docs/adr/` — architecture decision records
 - `docs/week0-notes.md` — learning log
+
+## Set up
+git config core.hooksPath .githooks
