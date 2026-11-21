@@ -1,0 +1,1 @@
+{"conversationId":"96601292-e9ef-4912-8958-8c9af1bac3bc","answer":"The credit score for applicant APP-1001 as of November 1, 2026, is 712.","toolCalls":[{"tool":"getCreditScore","arguments":"APP-1001","outcome":"OK"}],"model":"qwen3:4b-instruct","promptTokens":952,"completionTokens":57,"latencyMs":6361}

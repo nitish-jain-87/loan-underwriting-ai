@@ -1,0 +1,1 @@
+{"conversationId":"c2f025b4-d0c2-4ac5-a5b5-ca7cf5757d14","answer":"No credit file was found for applicant APP-9999. Unable to provide a credit score.","toolCalls":[{"tool":"getCreditScore","arguments":"APP-9999","outcome":"ERROR: No credit file found for APP-9999"}],"model":"qwen3:4b-instruct","promptTokens":933,"completionTokens":49,"latencyMs":5248}

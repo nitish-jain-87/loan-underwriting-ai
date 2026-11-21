@@ -1,0 +1,1 @@
+{"conversationId":"d0358572-3671-470b-9719-d4a344d230aa","answer":"The debt-to-income ratio is 35.00%.","toolCalls":[{"tool":"calculateDebtToIncome","arguments":"2100 / 6000","outcome":"OK"}],"model":"gpt-5.4-mini-2026-03-17","promptTokens":797,"completionTokens":43,"latencyMs":1646}

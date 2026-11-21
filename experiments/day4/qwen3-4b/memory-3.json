@@ -1,0 +1,1 @@
+{"conversationId":"5e839d9e-a2eb-410b-9f6e-19fda1b13e86","answer":"No credit file was found for applicant ID APP-1234. Unable to retrieve a credit score.","toolCalls":[{"tool":"getCreditScore","arguments":"APP-1234","outcome":"ERROR: No credit file found for APP-1234"}],"model":"qwen3:4b-instruct","promptTokens":917,"completionTokens":50,"latencyMs":5025}

@@ -1,0 +1,1 @@
+{"conversationId":"058d3709-e702-4e29-846a-f8a75532b251","answer":"The debt-to-income ratio for APP-1002 is 35.00%.","toolCalls":[{"tool":"calculateDebtToIncome","arguments":"2100 / 6000","outcome":"OK"}],"model":"gpt-5.4-mini-2026-03-17","promptTokens":797,"completionTokens":48,"latencyMs":1501}

@@ -1,0 +1,29 @@
+{
+  "model": "qwen3:4b-instruct",
+  "created_at": "2026-11-19T20:19:56.2275091Z",
+  "message": {
+    "role": "assistant",
+    "content": "",
+    "tool_calls": [
+      {
+        "id": "NkKsMEovyoOASxsIu6WJu7A0gssz67py",
+        "function": {
+          "index": 0,
+          "name": "getCreditScore",
+          "arguments": {
+            "applicantId": "APP-1001"
+          }
+        }
+      }
+    ]
+  },
+  "done": true,
+  "done_reason": "stop",
+  "total_duration": 13447597500,
+  "load_duration": 7364207200,
+  "prompt_eval_count": 191,
+  "prompt_eval_cached_count": 0,
+  "prompt_eval_duration": 3503560000,
+  "eval_count": 27,
+  "eval_duration": 2267754000
+}

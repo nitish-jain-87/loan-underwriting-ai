@@ -12,6 +12,11 @@ spring:
       audio:
         speech: none
         transcription: none
+    tools:
+      limits:
+        # Spring AI 2.0.1+ defaults: 40 calls per tool, 150 total, PER TURN. Far too loose for us.
+        max-calls-per-tool-default: 3
+        max-total-tool-calls: 5
 
 server:
   port: 8080

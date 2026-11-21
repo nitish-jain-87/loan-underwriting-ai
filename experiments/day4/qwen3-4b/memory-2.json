@@ -1,0 +1,1 @@
+{"conversationId":"e445b25e-50e0-431d-bf6f-5055d4b33a29","answer":"The credit score for applicant APP-1003 is 655 as of 2026-11-01.","toolCalls":[{"tool":"getCreditScore","arguments":"APP-1003","outcome":"OK"}],"model":"qwen3:4b-instruct","promptTokens":990,"completionTokens":58,"latencyMs":6482}

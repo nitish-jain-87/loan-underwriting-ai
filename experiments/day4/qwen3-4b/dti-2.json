@@ -1,0 +1,1 @@
+{"conversationId":"bf731361-fb35-4501-a8e1-f74ecbd5f763","answer":"The debt-to-income ratio for the applicant is 35.00%.","toolCalls":[{"tool":"calculateDebtToIncome","arguments":"2100 / 6000","outcome":"OK"}],"model":"qwen3:4b-instruct","promptTokens":994,"completionTokens":57,"latencyMs":6372}

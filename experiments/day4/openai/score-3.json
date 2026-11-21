@@ -1,0 +1,1 @@
+{"conversationId":"134421e7-f0d6-417c-b66b-40f8001f29c7","answer":"Applicant APP-1001’s current credit score is 712, as of 2026-11-01.","toolCalls":[{"tool":"getCreditScore","arguments":"APP-1001","outcome":"OK"}],"model":"gpt-5.4-mini-2026-03-17","promptTokens":767,"completionTokens":49,"latencyMs":1343}
