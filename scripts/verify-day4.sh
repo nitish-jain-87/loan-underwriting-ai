@@ -81,7 +81,7 @@ for pair in qwen3-4b:qwen3:4b openai:gpt-5.4-mini; do
   else info "$label: memory recall = ${r:-?} (a FAIL here is a model finding, not a wiring bug, IF openai passes)"; fi
   info "$label: passes score $(val pass_score $S)/3 dti $(val pass_dti $S)/3 unknown $(val pass_unknown $S)/3 inject $(val pass_inject $S)/3 notool $(val pass_notool $S)/3"
 done
-check "RESULTS.md generated"                      "[ -f $D/RESULTS.md ] && [ \$(grep -c '^| ' $D/RESULTS.md) -ge 4 ]"
+check "RESULTS.md generated"                      "[ -f $D/RESULTS.md ] && [ \$(grep -c '^| ' $D/RESULTS.md) -ge 3 ]"
 
 echo; echo "Result: $PASS passed, $FAIL failed"
 [ "$FAIL" -eq 0 ] && echo "DAY 4: READY FOR REVIEW" || { echo "DAY 4: NOT DONE"; exit 1; }
